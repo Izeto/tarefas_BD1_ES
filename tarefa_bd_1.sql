@@ -7,7 +7,7 @@ USE misael_servicos; /**EXECUTAR A BASE DE DADOS**/
 CREATE TABLE misael_servicos (
 id INT NOT NULL PRIMARY KEY
 ,nome VARCHAR (255) NOT NULL UNIQUE
-,sigla_pais CHAR (2) NOT NULL UNIQUE
-,ativar CHAR DEFAULT 'Y' NOT NULL
+,sigla_pais CHAR(2) NOT NULL UNIQUE
+,ativar CHAR(1) DEFAULT NOT NULL 'Y'
 ,CHECK (ativar IN ('Y','Z'))
 ); /**CRIAR TABELA DE DADOS**/
