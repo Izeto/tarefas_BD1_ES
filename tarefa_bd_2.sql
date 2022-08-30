@@ -63,6 +63,8 @@ id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 ,nome VARCHAR(255) NOT NULL UNIQUE
 ,cpf VARCHAR(15) NOT NULL UNIQUE
 ,telefone VARCHAR(10) NOT NULL
+,ativo CHAR(1) NOT NULL DEFAULT 'S'
+,CHECK (ativo IN('S','N'))
 );
 
 INSERT INTO funcionario (nome,cpf,telefone)
@@ -87,6 +89,8 @@ id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 ,nome VARCHAR(255) NOT NULL UNIQUE
 ,cpf_cnpj VARCHAR(15) NOT NULL UNIQUE
 ,telefone VARCHAR(10) NOT NULL
+,ativo CHAR(1) NOT NULL DEFAULT 'S'
+,CHECK (ativo IN('S','N'))
 );
 
 INSERT INTO cliente (nome,cpf_cnpj,telefone)
