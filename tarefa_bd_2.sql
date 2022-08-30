@@ -68,3 +68,27 @@ id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
 INSERT INTO funcionario (nome,cpf,telefone)
 VALUES ('JOSÉ','123.456.789-10','4002-8922');
 SELECT * FROM funcionario;
+
+CREATE TABLE agendamento(
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
+,data_agend DATETIME(1) NOT NULL UNIQUE
+,hora TIME(1) NOT NULL
+,valor VARCHAR(45) NOT NULL
+,ativo CHAR(1) NOT NULL DEFAULT 'S'
+,CHECK (ativo IN('S','N'))
+);
+
+INSERT INTO agendamento(data_agend,hora,valor)
+VALUES ('2023-03-11','13:27:00',50.00);
+SELECT * FROM agendamento;
+
+CREATE TABLE cliente(
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
+,nome VARCHAR(255) NOT NULL UNIQUE
+,cpf_cnpj VARCHAR(15) NOT NULL UNIQUE
+,telefone VARCHAR(10) NOT NULL
+);
+
+INSERT INTO cliente (nome,cpf_cnpj,telefone)
+VALUES ('JOAO','109.876.543-21','1234-5678');
+SELECT * FROM cliente;
